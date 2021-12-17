@@ -14,7 +14,7 @@ just change function call in button (find or eliminate)
   find/eliminate duplicate
 </button>
 
-<p id="demo">BCADEABD</p>
+<p id="demo">AMRIKERENBANGET</p>
 
 <script>
 function findDup(str) {
