@@ -28,11 +28,27 @@ function findDup(str) {
     
     for(abjad in strCount) {
     	if(strCount[abjad] > 1) {
-          arrDup.push(abjad);
-        }
+        arrDup.push(abjad);
+      }
     }
     
     document.getElementById('demo').innerHTML = arrDup.sort().join().replaceAll(',', '');
+}
+
+function findDup2(words){
+    let duplicate_word = []
+    for(let i = 0; i < words.length; i++){
+      if(duplicate_word.indexOf(words[i]) < 0 && words.indexOf(words[i], i+1) >=0)
+        duplicate_word.push(words[i])
+    }
+    
+    document.getElementById('demo').innerHTML = duplicate_word.sort().join().replace(/,/g,'')
+}
+
+function findDup3(input) {
+	let arrayString = {}
+	input.split('').map(item => arrayString[item] = arrayString[item] ? arrayString[item]+1 : 1) 
+	document.getElementById('demo').innerHTML = Object.keys(arrayString).filter(item => arrayString[item] > 1).sort().join().replaceAll(',','')
 }
 
 function eliDup(str) {
