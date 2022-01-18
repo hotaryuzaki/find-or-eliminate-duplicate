@@ -1,22 +1,9 @@
 # find-or-eliminate-duplicate
-find duplicate alphabet function or eliminate duplicate alphabet function
+find duplicate alphabet function or eliminate duplicate alphabet function, i provide some functions so you can pick one you prefer.
 
-just change function call in button (find or eliminate)
+you can copy this or download from index.js
 
 ```
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>find or eliminate duplicate</h2>
-
-<button type="button" onclick="findDup(document.getElementById('demo').innerHTML)">
-  find/eliminate duplicate
-</button>
-
-<p id="demo">AMRIKERENBANGET</p>
-
-<script>
 function findDup(str) {
     let arr = str.split('');
     let strCount = {};
@@ -32,7 +19,7 @@ function findDup(str) {
       }
     }
     
-    document.getElementById('demo').innerHTML = arrDup.sort().join().replaceAll(',', '');
+    return arrDup.sort().join().replaceAll(',', '');
 }
 
 function findDup2(words){
@@ -42,13 +29,13 @@ function findDup2(words){
         duplicate_word.push(words[i])
     }
     
-    document.getElementById('demo').innerHTML = duplicate_word.sort().join().replace(/,/g,'')
+    return duplicate_word.sort().join().replace(/,/g,'')
 }
 
 function findDup3(input) {
-	let arrayString = {}
-	input.split('').map(item => arrayString[item] = arrayString[item] ? arrayString[item]+1 : 1) 
-	document.getElementById('demo').innerHTML = Object.keys(arrayString).filter(item => arrayString[item] > 1).sort().join().replaceAll(',','')
+    let arrayString = {}
+    input.split('').map(item => arrayString[item] = arrayString[item] ? arrayString[item]+1 : 1) 
+    return Object.keys(arrayString).filter(item => arrayString[item] > 1).sort().join().replaceAll(',','')
 }
 
 function eliDup(str) {
@@ -61,9 +48,6 @@ function eliDup(str) {
         }
     })
     
-    document.getElementById('demo').innerHTML = arrEli.sort().join().replaceAll(',', '');
+    return arrEli.sort().join().replaceAll(',', '');
 }
-</script>
-</body>
-</html> 
 ```
