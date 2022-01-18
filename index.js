@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>find or eliminate duplicate</h2>
-
-<button type="button" onclick="findDup(document.getElementById('demo').innerHTML)">
-  find/eliminate duplicate
-</button>
-
-<p id="demo">BCADEABD</p>
-
-<script>
 function findDup(str) {
     let arr = str.split('');
     let strCount = {};
@@ -26,7 +13,7 @@ function findDup(str) {
         }
     }
     
-    document.getElementById('demo').innerHTML = arrDup.sort().join().replaceAll(',', '');
+    return arrDup.sort().join().replaceAll(',', '');
 }
 
 function eliDup(str) {
@@ -39,8 +26,5 @@ function eliDup(str) {
         }
     })
     
-    document.getElementById('demo').innerHTML = arrEli.sort().join().replaceAll(',', '');
+    return arrEli.sort().join().replaceAll(',', '');
 }
-</script>
-</body>
-</html> 
