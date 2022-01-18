@@ -1,6 +1,7 @@
 # find-or-eliminate-duplicate
 find duplicate alphabet function or eliminate duplicate alphabet function, i provide some functions so you can pick one you prefer.
 
+### FUNCTIONS
 you can copy this or download from index.js
 
 ```
@@ -50,4 +51,60 @@ function eliDup(str) {
     
     return arrEli.sort().join().replaceAll(',', '');
 }
+```
+
+### DEMO
+just copy this to HTML file
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>find or eliminate duplicate</h2>
+
+<button type="button" onclick="lari(document.getElementById('demo').innerHTML)">
+  find/eliminate duplicate
+</button>
+
+<p id="demo">BCADEABD</p>
+
+<script>
+function findDup(str) {
+    let arr = str.split('');
+    let strCount = {};
+    let arrDup = [];
+    
+    arr.map((value) => {
+    	strCount[value] = strCount[value] ? strCount[value]+1 : 1;
+    })
+    
+    for(abjad in strCount) {
+    	if(strCount[abjad] > 1) {
+          arrDup.push(abjad);
+        }
+    }
+    
+    return arrDup.sort().join().replaceAll(',', '');
+}
+
+function eliDup(str) {
+    let arr = str.split('');
+    let arrEli = [];
+    
+    arr.map((value) => {
+    	if(arrEli.indexOf(value) === -1) {
+          arrEli.push(value);
+        }
+    })
+    
+    return arrEli.sort().join().replaceAll(',', '');
+}
+
+function lari(text) {
+    document.getElementById('demo').innerHTML = eliDup(text);
+}
+
+</script>
+</body>
+</html> 
 ```
